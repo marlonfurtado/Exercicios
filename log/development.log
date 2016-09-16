@@ -1,0 +1,2556 @@
+  [1m[35m (174.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (121.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddNameEmailGithubBio (20160914145211)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "profiles" ADD "name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddNameEmailGithubBio (20160914145211)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "github" varchar, "bio" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160914145211"]]
+  [1m[35m (158.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-09-14 16:15:03 UTC], ["updated_at", 2016-09-14 16:15:03 UTC]]
+  [1m[35m (132.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "profiles" DEFAULT VALUES[0m
+  [1m[35m (141.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" DEFAULT VALUES[0m
+  [1m[35m (164.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[36mProfile Load (1.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."name" = ? LIMIT ?[0m  [["name", "Bernardo"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name") VALUES (?)[0m  [["name", "Lucimar"]]
+  [1m[35m (152.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name") VALUES (?)[0m  [["name", "Fellipe"]]
+  [1m[35m (179.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+Started GET "/" for 127.0.0.1 at 2016-09-14 13:50:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (uninitialized constant ProfilesController):
+  
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `const_get'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:93:in `controller_class'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [1 times] (1.2ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.2ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.4ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.6ms)
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:01:55 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 324ms (Views: 315.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:04:21 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:06:55 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "bio") VALUES (?, ?)[0m  [["name", "Jonatas"], ["bio", "kashdkjah sdaskd hkash dkjh "]]
+  [1m[35m (283.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:18:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 200ms (Views: 191.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:18:43 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:19:07 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:36:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSkills (20160914172903)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "skills" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "years" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160914172903"]]
+  [1m[35m (159.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:37:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 315ms (Views: 308.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/skill" for 127.0.0.1 at 2016-09-14 14:37:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/skill"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (3.9ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.3ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.7ms)
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:37:32 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:37:39 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 27ms (Views: 22.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/skills/new" for 127.0.0.1 at 2016-09-14 14:37:42 -0300
+Processing by SkillsController#new as HTML
+  Rendering skills/new.html.erb within layouts/application
+  Rendered skills/_form.html.erb (6.6ms)
+  Rendered skills/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 39ms (Views: 29.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/skills" for 127.0.0.1 at 2016-09-14 14:37:55 -0300
+Processing by SkillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oDnjfR6tbpZe7qXgJQPr77B+Vb92rtGrnYqBYwFXvbB15yr57s/f1pv7L1jPrr6nNXb09tGgN6l7LhR8BINcwQ==", "skill"=>{"name"=>"Roberto", "years"=>"2"}, "commit"=>"Create Skill"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "skills" ("name", "years", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Roberto"], ["years", 2], ["created_at", 2016-09-14 17:37:55 UTC], ["updated_at", 2016-09-14 17:37:55 UTC]]
+  [1m[35m (229.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/skills/1
+Completed 302 Found in 238ms (ActiveRecord: 230.9ms)
+
+
+Started GET "/skills/1" for 127.0.0.1 at 2016-09-14 14:37:55 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills/1/edit" for 127.0.0.1 at 2016-09-14 14:37:59 -0300
+Processing by SkillsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering skills/edit.html.erb within layouts/application
+  Rendered skills/_form.html.erb (3.4ms)
+  Rendered skills/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:38:06 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/skills/1" for 127.0.0.1 at 2016-09-14 14:38:09 -0300
+Processing by SkillsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sXWesrpnYpckxMzslsB6Mod8tzbQX0aEnEUs2DscHBoTLzD9PgAYS+vtQrOkfMx6o+Ueptw7Jm9yCoDTAWeYhw==", "id"=>"1"}
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "skills" WHERE "skills"."id" = ?[0m  [["id", 1]]
+  [1m[35m (146.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/skills
+Completed 302 Found in 150ms (ActiveRecord: 146.4ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:38:09 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills/new" for 127.0.0.1 at 2016-09-14 14:38:11 -0300
+Processing by SkillsController#new as HTML
+  Rendering skills/new.html.erb within layouts/application
+  Rendered skills/_form.html.erb (3.6ms)
+  Rendered skills/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/skills" for 127.0.0.1 at 2016-09-14 14:38:17 -0300
+Processing by SkillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uvy7lc/aD83N43UPYqGMlN1lhvMCKf3eEdb/7FQhYe2HInIRP7i+jQj2/7eIDNncWG0nuqUnG9z3cmrzUfWAnA==", "skill"=>{"name"=>"Java", "years"=>"2"}, "commit"=>"Create Skill"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "skills" ("name", "years", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Java"], ["years", 2], ["created_at", 2016-09-14 17:38:17 UTC], ["updated_at", 2016-09-14 17:38:17 UTC]]
+  [1m[35m (275.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/skills/2
+Completed 302 Found in 280ms (ActiveRecord: 276.0ms)
+
+
+Started GET "/skills/2" for 127.0.0.1 at 2016-09-14 14:38:18 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:38:24 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/skills/new" for 127.0.0.1 at 2016-09-14 14:38:26 -0300
+Processing by SkillsController#new as HTML
+  Rendering skills/new.html.erb within layouts/application
+  Rendered skills/_form.html.erb (3.0ms)
+  Rendered skills/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/skills" for 127.0.0.1 at 2016-09-14 14:38:34 -0300
+Processing by SkillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lGYcuR34SMiQc06Cp/uOEtWHBFU7ROdCSbJx8EILlZFBuNU97Zr5iFVmxDpNVttaUI+lHJxKAUCvFuTvR9904A==", "skill"=>{"name"=>"C#", "years"=>"1"}, "commit"=>"Create Skill"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "years", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "C#"], ["years", 1], ["created_at", 2016-09-14 17:38:34 UTC], ["updated_at", 2016-09-14 17:38:34 UTC]]
+  [1m[35m (232.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/skills/3
+Completed 302 Found in 237ms (ActiveRecord: 232.9ms)
+
+
+Started GET "/skills/3" for 127.0.0.1 at 2016-09-14 14:38:34 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:38:35 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills/2" for 127.0.0.1 at 2016-09-14 14:38:42 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:38:44 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:39:20 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills/2" for 127.0.0.1 at 2016-09-14 14:39:29 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:39:32 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:44:41 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:44:50 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.4ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 34ms (Views: 29.3ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+DEPRECATION WARNING: Passing #original_exception is deprecated and has no effect. Exceptions will automatically capture the original exception. (called from load at /home/aluno3/.rbenv/versions/2.3.1/bin/rake:23)
+  [1m[35m (151.2ms)[0m  [1m[35mCREATE TABLE "skills" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "years" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (147.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (158.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20160914172903')[0m
+  [1m[35m (157.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-09-14 17:45:36 UTC], ["updated_at", 2016-09-14 17:45:36 UTC]]
+  [1m[35m (148.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (146.8ms)[0m  [1m[35mCREATE TABLE "skills" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "years" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (157.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (165.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20160914172903')[0m
+  [1m[35m (158.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-09-14 17:45:37 UTC], ["updated_at", 2016-09-14 17:45:37 UTC]]
+  [1m[35m (164.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:46:56 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (4.3ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:51:58 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.7ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.1ms)
+  [1m[35m (132.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (131.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSkills (20160914172903)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "skills" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "years" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160914172903"]]
+  [1m[35m (174.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProfiles (20160914175128)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "github" varchar, "bio" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160914175128"]]
+  [1m[35m (171.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-09-14 17:52:23 UTC], ["updated_at", 2016-09-14 17:52:23 UTC]]
+  [1m[35m (159.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2016-09-14 14:52:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:52:31 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 152ms (Views: 148.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2016-09-14 14:52:37 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/profile"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (5.3ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.3ms)
+Started GET "/profiles" for 127.0.0.1 at 2016-09-14 14:52:40 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-14 14:55:03 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (4.5ms)
+  Rendered profiles/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 35ms (Views: 26.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/profiles" for 127.0.0.1 at 2016-09-14 14:55:16 -0300
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+rrreC/eRyhGvjrVWaXfBTLn2oogQfknnNDMIJ6uPm+x6oSrnFw94aP/W2k3uG5MTIKiUQ3zi/dyRQZafXsuPQ==", "profile"=>{"name"=>"Fellipe", "email"=>"Callegas.f@gmail.com", "github"=>"Callegas", "bio"=>"Eu mesmo"}, "commit"=>"Create Profile"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "email", "github", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fellipe"], ["email", "Callegas.f@gmail.com"], ["github", "Callegas"], ["bio", "Eu mesmo"], ["created_at", 2016-09-14 17:55:16 UTC], ["updated_at", 2016-09-14 17:55:16 UTC]]
+  [1m[35m (329.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 335ms (ActiveRecord: 329.9ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2016-09-14 14:55:16 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-14 14:55:19 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-14 14:55:20 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (4.6ms)
+  Rendered profiles/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profiles" for 127.0.0.1 at 2016-09-14 14:55:42 -0300
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9EybahQUTjVXuCDX0zWVFqrqvmrbAb4BJql8zjBFtVy/HPS5p5Y0/LL5QWu9KCRf1I/GsfazzNHIPLa005ClDg==", "profile"=>{"name"=>"Lucimar", "email"=>"Lucimar.neves@gmail.com", "github"=>"LucimarNeves", "bio"=>"Eu mesma"}, "commit"=>"Create Profile"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "email", "github", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lucimar"], ["email", "Lucimar.neves@gmail.com"], ["github", "LucimarNeves"], ["bio", "Eu mesma"], ["created_at", 2016-09-14 17:55:42 UTC], ["updated_at", 2016-09-14 17:55:42 UTC]]
+  [1m[35m (257.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/profiles/2
+Completed 302 Found in 262ms (ActiveRecord: 257.5ms)
+
+
+Started GET "/profiles/2" for 127.0.0.1 at 2016-09-14 14:55:43 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-14 14:55:44 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-14 14:55:45 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (4.5ms)
+  Rendered profiles/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profiles" for 127.0.0.1 at 2016-09-14 14:56:06 -0300
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9HTwSeDSG9t1lgGLh3Exw+r8yyntRCWfshByUaPa6CW/JJ+aU1BhEpDXYDfpbICKlJmz8sD2V09chbgrQA/4dw==", "profile"=>{"name"=>"Gustavo", "email"=>"Gustavo@gmail.com", "github"=>"Gustavo", "bio"=>"O gustavo"}, "commit"=>"Create Profile"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "email", "github", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gustavo"], ["email", "Gustavo@gmail.com"], ["github", "Gustavo"], ["bio", "O gustavo"], ["created_at", 2016-09-14 17:56:06 UTC], ["updated_at", 2016-09-14 17:56:06 UTC]]
+  [1m[35m (268.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/profiles/3
+Completed 302 Found in 274ms (ActiveRecord: 269.2ms)
+
+
+Started GET "/profiles/3" for 127.0.0.1 at 2016-09-14 14:56:06 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-14 14:56:07 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:56:12 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills/new" for 127.0.0.1 at 2016-09-14 14:56:14 -0300
+Processing by SkillsController#new as HTML
+  Rendering skills/new.html.erb within layouts/application
+  Rendered skills/_form.html.erb (3.1ms)
+  Rendered skills/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 40ms (Views: 33.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/skills" for 127.0.0.1 at 2016-09-14 14:56:22 -0300
+Processing by SkillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3UvuKpPbCAOVBX8c3R5/2vVBxE+PQKWKK+6htBkFRsoIlSeuY7m5Q1AQ9aQ3syqScEllBihOQ4jNSjSrHNGnuw==", "skill"=>{"name"=>"Ruby", "years"=>"1"}, "commit"=>"Create Skill"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "years", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ruby"], ["years", 1], ["created_at", 2016-09-14 17:56:22 UTC], ["updated_at", 2016-09-14 17:56:22 UTC]]
+  [1m[35m (263.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/skills/1
+Completed 302 Found in 268ms (ActiveRecord: 263.9ms)
+
+
+Started GET "/skills/1" for 127.0.0.1 at 2016-09-14 14:56:22 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:56:23 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills/new" for 127.0.0.1 at 2016-09-14 14:56:26 -0300
+Processing by SkillsController#new as HTML
+  Rendering skills/new.html.erb within layouts/application
+  Rendered skills/_form.html.erb (2.8ms)
+  Rendered skills/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/skills" for 127.0.0.1 at 2016-09-14 14:56:30 -0300
+Processing by SkillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tsSMlu47r+yGx7wzeHu4qq9lF2NPfSuyvGIFwe2HAyBjGkUSHlkerEPSNouS1u3iKm22KuhzzbBaxpDe6FPiUQ==", "skill"=>{"name"=>"C#", "years"=>"3"}, "commit"=>"Create Skill"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "skills" ("name", "years", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "C#"], ["years", 3], ["created_at", 2016-09-14 17:56:30 UTC], ["updated_at", 2016-09-14 17:56:30 UTC]]
+  [1m[35m (249.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/skills/2
+Completed 302 Found in 254ms (ActiveRecord: 250.7ms)
+
+
+Started GET "/skills/2" for 127.0.0.1 at 2016-09-14 14:56:31 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:56:32 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills/new" for 127.0.0.1 at 2016-09-14 14:56:36 -0300
+Processing by SkillsController#new as HTML
+  Rendering skills/new.html.erb within layouts/application
+  Rendered skills/_form.html.erb (2.6ms)
+  Rendered skills/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/skills" for 127.0.0.1 at 2016-09-14 14:56:39 -0300
+Processing by SkillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FZS4Vg4vHRESrMy8tNADZQr8e1/P1xZQ54yUvv/6w/PASnHS/k2sUde5RgRefVYtj/TaFmjZ8FIBKAGh+i4igg==", "skill"=>{"name"=>"C", "years"=>"1"}, "commit"=>"Create Skill"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "years", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "C"], ["years", 1], ["created_at", 2016-09-14 17:56:39 UTC], ["updated_at", 2016-09-14 17:56:39 UTC]]
+  [1m[35m (269.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/skills/3
+Completed 302 Found in 273ms (ActiveRecord: 269.7ms)
+
+
+Started GET "/skills/3" for 127.0.0.1 at 2016-09-14 14:56:39 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:56:40 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills/new" for 127.0.0.1 at 2016-09-14 14:56:41 -0300
+Processing by SkillsController#new as HTML
+  Rendering skills/new.html.erb within layouts/application
+  Rendered skills/_form.html.erb (3.7ms)
+  Rendered skills/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/skills" for 127.0.0.1 at 2016-09-14 14:56:46 -0300
+Processing by SkillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KCIqODLIbRICegpH1xAZAzlFcC7ITChl+s3Jgx82X7H9/OO8wqrcUsdvgP89vUxLvE3RZ29CzmccaVycGuK+wA==", "skill"=>{"name"=>"Java", "years"=>"1"}, "commit"=>"Create Skill"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("name", "years", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Java"], ["years", 1], ["created_at", 2016-09-14 17:56:46 UTC], ["updated_at", 2016-09-14 17:56:46 UTC]]
+  [1m[35m (253.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/skills/4
+Completed 302 Found in 259ms (ActiveRecord: 254.3ms)
+
+
+Started GET "/skills/4" for 127.0.0.1 at 2016-09-14 14:56:46 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 14:56:48 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAssociationColumnToSkills (20160914182158)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "skills" ADD "profile_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160914182158"]]
+  [1m[35m (150.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/skills" for 127.0.0.1 at 2016-09-14 15:25:32 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-14 15:25:35 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (4.3ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Seu Franscico"], ["created_at", 2016-09-14 18:26:50 UTC], ["updated_at", 2016-09-14 18:26:50 UTC]]
+  [1m[35m (183.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rails"], ["created_at", 2016-09-14 18:27:12 UTC], ["updated_at", 2016-09-14 18:27:12 UTC]]
+  [1m[35m (169.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jonatas"], ["created_at", 2016-09-14 18:29:02 UTC], ["updated_at", 2016-09-14 18:29:02 UTC]]
+  [1m[35m (180.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/profiles" for 127.0.0.1 at 2016-09-14 15:30:02 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 44ms (Views: 40.1ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/profiles/4" for 127.0.0.1 at 2016-09-14 15:30:08 -0300
+Processing by ProfilesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"o9TJZ8hA9i4jBsKg0TfYplmIv35TxI+K+HNlj/b7+nsBjmcoTCeM8uwvTP/ji27ufREW7l+g72EWPMmEzIB+5g==", "id"=>"4"}
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "profiles" WHERE "profiles"."id" = ?[0m  [["id", 4]]
+  [1m[35m (181.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/profiles
+Completed 302 Found in 187ms (ActiveRecord: 183.0ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-14 15:30:08 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at", "profile_id") VALUES (?, ?, ?, ?)[0m  [["name", "CSS"], ["created_at", 2016-09-14 18:38:00 UTC], ["updated_at", 2016-09-14 18:38:00 UTC], ["profile_id", 1]]
+  [1m[35m (168.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at", "profile_id") VALUES (?, ?, ?, ?)[0m  [["name", "CSS"], ["created_at", 2016-09-14 18:38:21 UTC], ["updated_at", 2016-09-14 18:38:21 UTC], ["profile_id", 5]]
+  [1m[35m (160.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jonatas"], ["created_at", 2016-09-14 18:39:15 UTC], ["updated_at", 2016-09-14 18:39:15 UTC]]
+  [1m[35m (171.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jonatas"], ["created_at", 2016-09-14 18:45:21 UTC], ["updated_at", 2016-09-14 18:45:21 UTC]]
+  [1m[35m (151.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProfile Load (1.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jonatas"], ["created_at", 2016-09-14 18:48:48 UTC], ["updated_at", 2016-09-14 18:48:48 UTC]]
+  [1m[35m (155.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "CSS"], ["created_at", 2016-09-14 18:49:02 UTC], ["updated_at", 2016-09-14 18:49:02 UTC]]
+  [1m[35m (168.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "skills" SET "updated_at" = ?, "profile_id" = ? WHERE "skills"."id" = ?[0m  [["updated_at", 2016-09-14 18:49:42 UTC], ["profile_id", 8], ["id", 8]]
+  [1m[35m (179.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "JS"], ["created_at", 2016-09-14 18:50:22 UTC], ["updated_at", 2016-09-14 18:50:22 UTC]]
+  [1m[35m (175.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "skills" SET "updated_at" = ?, "profile_id" = ? WHERE "skills"."id" = ?[0m  [["updated_at", 2016-09-14 18:50:22 UTC], ["profile_id", 8], ["id", 9]]
+  [1m[35m (164.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "HTML"], ["created_at", 2016-09-14 18:50:26 UTC], ["updated_at", 2016-09-14 18:50:26 UTC]]
+  [1m[35m (179.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "skills" SET "updated_at" = ?, "profile_id" = ? WHERE "skills"."id" = ?[0m  [["updated_at", 2016-09-14 18:50:27 UTC], ["profile_id", 8], ["id", 10]]
+  [1m[35m (173.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 8]]
+Started GET "/profiles" for 127.0.0.1 at 2016-09-14 15:53:58 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 37ms (Views: 29.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profiles/8/edit" for 127.0.0.1 at 2016-09-14 15:54:15 -0300
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (3.7ms)
+  Rendered profiles/edit.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-14 15:54:17 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles/8" for 127.0.0.1 at 2016-09-14 15:55:25 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:14:06 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 48ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 13:14:41 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 420ms (Views: 353.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profiles/1/edit" for 127.0.0.1 at 2016-09-15 13:14:50 -0300
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (48.8ms)
+  Rendered profiles/edit.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 90ms (Views: 75.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/profiles/1" for 127.0.0.1 at 2016-09-15 13:14:54 -0300
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aJ2npkw74btJKrHbeiCJOtwRzQsZ7y0/IUnnFob6+MxzG9A6gnxSVSzZlxEK09RYJJlk7eYJ3YqJ+m3PPb4P7g==", "profile"=>{"name"=>"Fellipe", "email"=>"Callegas.f@gmail.com", "github"=>"Callegas", "bio"=>"Eu mesmo 1"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[36mProfile Load (0.8ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE "profiles" SET "bio" = ?, "updated_at" = ? WHERE "profiles"."id" = ?[0m  [["bio", "Eu mesmo 1"], ["updated_at", 2016-09-15 16:14:54 UTC], ["id", 1]]
+  [1m[35m (143.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 155ms (ActiveRecord: 146.3ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2016-09-15 13:14:54 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles/1/edit" for 127.0.0.1 at 2016-09-15 13:14:57 -0300
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (11.1ms)
+  Rendered profiles/edit.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2016-09-15 13:14:58 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 13:15:01 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 13:16:25 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/aluno3/Desktop/portifolio2/app/views/profiles/index.html.erb:33: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...rofile', new_profile_path class="button");@output_buffer.saf...
+...                               ^):
+  
+app/views/profiles/index.html.erb:33: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.8ms)
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 13:16:35 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:26:40 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (4.4ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:27:29 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 46ms (Views: 39.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/1" for 127.0.0.1 at 2016-09-15 13:29:33 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (131.6ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (62.1ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (236.6ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:29:35 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 13:30:09 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (3.9ms)
+  Rendered profiles/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:32:58 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Profile:0x0055b7af051e98>):
+    14:   </thead>
+    15: 
+    16:   <tbody>
+    17:     <% @profiles.each do |profile| %>
+    18:       <tr>
+    19:         <td><%= profile.name %></td>
+    20:         <td><%= profile.email %></td>
+  
+app/views/profiles/index.html.erb:17:in `_app_views_profiles_index_html_erb__1177215250355220430_47123701853300'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.0ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:33:17 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 38ms (Views: 32.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:34:02 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Profile:0x0055ad6e0ab628>):
+    14:   </thead>
+    15: 
+    16:   <tbody>
+    17:     <% @profiles.each do |profile| %>
+    18:       <tr>
+    19:         <td><%= profile.name %></td>
+    20:         <td><%= profile.email %></td>
+  
+app/views/profiles/index.html.erb:17:in `_app_views_profiles_index_html_erb___2833972487783510020_47101681945500'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.9ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:34:07 -0300
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 200ms (Views: 193.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:35:01 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Profile:0x007fdf8417f6b8>):
+    14:   </thead>
+    15: 
+    16:   <tbody>
+    17:     <% @profiles.each do |profile| %>
+    18:       <tr>
+    19:         <td><%= profile.name %></td>
+    20:         <td><%= profile.email %></td>
+  
+app/views/profiles/index.html.erb:17:in `_app_views_profiles_index_html_erb___2833972487783510020_70298985296340'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.7ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:37:53 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/aluno3/Desktop/portifolio2/app/views/profiles/index.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/profiles/index.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.2ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.1ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:38:15 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Profile:0x0055ad6e2389a0>):
+    14:   </thead>
+    15: 
+    16:   <tbody>
+    17:     <% @profiles.each do |profile| %>
+    18:       <tr>
+    19:         <td><%= profile.name %></td>
+    20:         <td><%= profile.email %></td>
+  
+app/views/profiles/index.html.erb:17:in `_app_views_profiles_index_html_erb___2833972487783510020_47101682706800'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.0ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:38:54 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    16:   <tbody>
+    17: 
+    18:       <tr>
+    19:         <td><%= @profile.name %></td>
+    20:         <td><%= @profile.email %></td>
+    21:         <td><%= @profile.github %></td>
+    22:         <td><%= @profile.bio %></td>
+  
+app/views/profiles/index.html.erb:19:in `_app_views_profiles_index_html_erb___2833972487783510020_70298987877220'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.3ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:40:00 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/aluno3/Desktop/portifolio2/app/views/profiles/index.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/profiles/index.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.4ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:40:35 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/aluno3/Desktop/portifolio2/app/views/profiles/index.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/profiles/index.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.4ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:41:24 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/aluno3/Desktop/portifolio2/app/views/profiles/index.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/profiles/index.html.erb:35: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.5ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:42:41 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 21.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 13:42:47 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (15.9ms)
+  Rendered profiles/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 13:42:50 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 13:43:24 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    14:   </thead>
+    15: 
+    16:   <tbody>
+    17:     <%=@profile.name%>
+    18:   </tbody>
+    19: </table>
+    20: 
+  
+app/views/profiles/index.html.erb:17:in `_app_views_profiles_index_html_erb___2833972487783510020_70298986077540'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.4ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:47:37 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 214ms (Views: 197.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:48:32 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (144.8ms)
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile' for #<#<Class:0x0055a1691bfbd8>:0x007feb5e28c700>
+Did you mean?  @profile
+               profile_url
+               profiles_url
+               profile_path
+               profiles_path
+               provide):
+    20:         <td><%= @profile.email %></td>
+    21:         <td><%= @profile.github %></td>
+    22:         <td><%= @profile.bio %></td>
+    23:         <td><%= link_to 'Show', profile %></td>
+    24:         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+    25:         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    26:       </tr>
+  
+app/views/profiles/index.html.erb:23:in `_app_views_profiles_index_html_erb___1588974318623222040_70324436887660'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.7ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 13:49:06 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-15 13:50:19 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.4ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 48ms (Views: 31.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/skills/10/edit" for 127.0.0.1 at 2016-09-15 13:50:55 -0300
+Processing by SkillsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering skills/edit.html.erb within layouts/application
+  Rendered skills/_form.html.erb (28.0ms)
+  Rendered skills/edit.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 53ms (Views: 49.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-15 13:50:59 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.7ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/skills/3/edit" for 127.0.0.1 at 2016-09-15 13:51:02 -0300
+Processing by SkillsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSkill Load (0.4ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering skills/edit.html.erb within layouts/application
+  Rendered skills/_form.html.erb (3.2ms)
+  Rendered skills/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-15 13:51:07 -0300
+Processing by SkillsController#index as HTML
+  Rendering skills/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.6ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered skills/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/profiles/1/edit" for 127.0.0.1 at 2016-09-15 13:51:24 -0300
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (4.7ms)
+  Rendered profiles/edit.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 13:51:28 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 13:53:45 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 20.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profiles/skills" for 127.0.0.1 at 2016-09-15 13:53:59 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"skills"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Profile with 'id'=skills):
+  
+app/controllers/profiles_controller.rb:67:in `set_profile'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.1ms)
+Started GET "/profile/skills" for 127.0.0.1 at 2016-09-15 13:54:28 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/profile/skills"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (6.4ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (39.1ms)
+Started GET "/skills" for 127.0.0.1 at 2016-09-15 13:54:40 -0300
+Processing by SkillsController#index as HTML
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" ORDER BY "skills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering skills/index.html.erb within layouts/application
+  Rendered skills/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 21ms (Views: 14.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/skills/2" for 127.0.0.1 at 2016-09-15 13:54:42 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSkill Load (0.4ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/skills/2/edit" for 127.0.0.1 at 2016-09-15 13:54:46 -0300
+Processing by SkillsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSkill Load (0.4ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering skills/edit.html.erb within layouts/application
+  Rendered skills/_form.html.erb (2.8ms)
+  Rendered skills/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-15 13:54:49 -0300
+Processing by SkillsController#index as HTML
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" ORDER BY "skills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering skills/index.html.erb within layouts/application
+  Rendered skills/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills/1/edit" for 127.0.0.1 at 2016-09-15 13:54:51 -0300
+Processing by SkillsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSkill Load (1.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering skills/edit.html.erb within layouts/application
+  Rendered skills/_form.html.erb (3.1ms)
+  Rendered skills/edit.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/skills/1" for 127.0.0.1 at 2016-09-15 13:54:54 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-15 13:55:00 -0300
+Processing by SkillsController#index as HTML
+  [1m[36mSkill Load (0.4ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" ORDER BY "skills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering skills/index.html.erb within layouts/application
+  Rendered skills/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/skills/1" for 127.0.0.1 at 2016-09-15 13:55:04 -0300
+Processing by SkillsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering skills/show.html.erb within layouts/application
+  Rendered skills/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/skills" for 127.0.0.1 at 2016-09-15 13:55:06 -0300
+Processing by SkillsController#index as HTML
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" ORDER BY "skills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering skills/index.html.erb within layouts/application
+  Rendered skills/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lucimar"], ["email", "lucimar.neves@terra.com.br"], ["created_at", 2016-09-15 16:59:46 UTC], ["updated_at", 2016-09-15 16:59:46 UTC]]
+  [1m[35m (139.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at", "profile_id") VALUES (?, ?, ?, ?)[0m  [["name", "CSS"], ["created_at", 2016-09-15 17:02:30 UTC], ["updated_at", 2016-09-15 17:02:30 UTC], ["profile_id", 9]]
+  [1m[35m (167.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 9]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lucimar"], ["email", "lucimar.neves@terra.com.br"], ["created_at", 2016-09-15 17:04:26 UTC], ["updated_at", 2016-09-15 17:04:26 UTC]]
+  [1m[35m (139.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "JS"], ["created_at", 2016-09-15 17:07:29 UTC], ["updated_at", 2016-09-15 17:07:29 UTC]]
+  [1m[35m (167.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "JS"], ["created_at", 2016-09-15 17:08:12 UTC], ["updated_at", 2016-09-15 17:08:12 UTC]]
+  [1m[35m (156.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "skills" SET "updated_at" = ?, "profile_id" = ? WHERE "skills"."id" = ?[0m  [["updated_at", 2016-09-15 17:08:57 UTC], ["profile_id", 9], ["id", 13]]
+  [1m[35m (178.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 9]]
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:10:00 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "cristian"], ["created_at", 2016-09-15 17:10:32 UTC], ["updated_at", 2016-09-15 17:10:32 UTC]]
+  [1m[35m (167.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "c#"], ["created_at", 2016-09-15 17:11:04 UTC], ["updated_at", 2016-09-15 17:11:04 UTC]]
+  [1m[35m (308.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "skills" SET "updated_at" = ?, "profile_id" = ? WHERE "skills"."id" = ?[0m  [["updated_at", 2016-09-15 17:11:24 UTC], ["profile_id", 11], ["id", 14]]
+  [1m[35m (161.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "cristian1"], ["created_at", 2016-09-15 17:11:54 UTC], ["updated_at", 2016-09-15 17:11:54 UTC]]
+  [1m[35m (155.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Phyton"], ["created_at", 2016-09-15 17:12:46 UTC], ["updated_at", 2016-09-15 17:12:46 UTC]]
+  [1m[35m (176.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "skills" SET "updated_at" = ?, "profile_id" = ? WHERE "skills"."id" = ?[0m  [["updated_at", 2016-09-15 17:12:46 UTC], ["profile_id", 12], ["id", 15]]
+  [1m[35m (164.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 12]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "teste"], ["created_at", 2016-09-15 17:13:32 UTC], ["updated_at", 2016-09-15 17:13:32 UTC]]
+  [1m[35m (169.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at", "profile_id") VALUES (?, ?, ?, ?)[0m  [["name", ".NET"], ["created_at", 2016-09-15 17:14:04 UTC], ["updated_at", 2016-09-15 17:14:04 UTC], ["profile_id", 13]]
+  [1m[35m (210.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 13]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "luci"], ["created_at", 2016-09-15 17:15:03 UTC], ["updated_at", 2016-09-15 17:15:03 UTC]]
+  [1m[35m (184.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("name", "created_at", "updated_at", "profile_id") VALUES (?, ?, ?, ?)[0m  [["name", "c#"], ["created_at", 2016-09-15 17:15:42 UTC], ["updated_at", 2016-09-15 17:15:42 UTC], ["profile_id", 14]]
+  [1m[35m (169.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 14]]
+Started GET "/profiles/1" for 127.0.0.1 at 2016-09-15 14:20:22 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:20:26 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (3.9ms)
+  Rendered profiles/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:22:59 -0300
+  
+SyntaxError (/home/aluno3/Desktop/portifolio2/config/routes.rb:7: syntax error, unexpected ':', expecting keyword_end
+  /profiles/:profiles_id/ads/new
+             ^):
+  
+config/routes.rb:7: syntax error, unexpected ':', expecting keyword_end
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.5ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:23:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21.3ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:23:16 -0300
+  
+SyntaxError (/home/aluno3/Desktop/portifolio2/config/routes.rb:7: syntax error, unexpected ':', expecting keyword_end
+  /profiles/:profile_id/ads/new
+             ^):
+  
+config/routes.rb:7: syntax error, unexpected ':', expecting keyword_end
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.5ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:24:28 -0300
+  
+SyntaxError (/home/aluno3/Desktop/portifolio2/config/routes.rb:7: syntax error, unexpected ':', expecting keyword_end
+  /profiles/:profile_id/new
+             ^):
+  
+config/routes.rb:7: syntax error, unexpected ':', expecting keyword_end
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.9ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:24:52 -0300
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+config/routes.rb:7:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.1ms)
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:25:04 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 22.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:25:06 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (3.0ms)
+  Rendered profiles/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:25:52 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2016-09-15 14:25:53 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:25:56 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (3.6ms)
+  Rendered profiles/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:26:44 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (3.1ms)
+  Rendered profiles/_form.html.erb (97.3ms)
+  Rendered profiles/new.html.erb within layouts/application (102.1ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile' for #<#<Class:0x007feb6013a968>:0x0055a1693053f8>
+Did you mean?  @profile
+               profile_url
+               profiles_url
+               profile_path
+               profiles_path
+               provide):
+    1: <%= form_for(profile) do |f| %>
+    2:   <% if profile.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+  
+app/views/profiles/_form.html.erb:1:in `_app_views_profiles__form_html_erb__2040049511458019642_47075870281300'
+app/views/profiles/new.html.erb:5:in `_app_views_profiles_new_html_erb___1891883318627690888_47075871458580'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.5ms)
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:31:25 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (3.5ms)
+  Rendered profiles/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:31:29 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:32:02 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 14]]
+  Rendered profiles/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 47ms (Views: 33.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:32:06 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (3.5ms)
+  Rendered profiles/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:32:51 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (3.5ms)
+  Rendered profiles/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 36ms (Views: 24.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:32:56 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:33:28 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:33:30 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:34:30 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:35:17 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:36:09 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:36:11 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:44:16 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:44:17 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2016-09-15 14:44:19 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:44:22 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:44:23 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (6.7ms)
+  Rendered profiles/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profiles/1/edit" for 127.0.0.1 at 2016-09-15 14:45:31 -0300
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (5.0ms)
+  Rendered profiles/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles/1/edit" for 127.0.0.1 at 2016-09-15 14:46:03 -0300
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (108.5ms)
+  Rendered profiles/edit.html.erb within layouts/application (109.7ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `field' for #<ActionView::Helpers::FormBuilder:0x007feb5f4f3a10>):
+    39: 
+    40:   <div class="field">
+    41:     <%= skills_form.label :years %>
+    42:     <%= skills_form.field :years %>
+    43:   </div>
+    44: 
+    45:   <% end %>
+  
+app/views/profiles/_form.html.erb:42:in `block (2 levels) in _app_views_profiles__form_html_erb__2040049511458019642_70324446950620'
+app/views/profiles/_form.html.erb:34:in `block in _app_views_profiles__form_html_erb__2040049511458019642_70324446950620'
+app/views/profiles/_form.html.erb:1:in `_app_views_profiles__form_html_erb__2040049511458019642_70324446950620'
+app/views/profiles/edit.html.erb:3:in `_app_views_profiles_edit_html_erb__4343516803009829793_70324447012260'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.5ms)
+Started GET "/profiles/1/edit" for 127.0.0.1 at 2016-09-15 14:46:42 -0300
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (94.9ms)
+  Rendered profiles/edit.html.erb within layouts/application (96.2ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `field' for #<ActionView::Helpers::FormBuilder:0x007feb6804fb18>):
+    39: 
+    40:   <div class="field">
+    41:     <%= skills_form.label :years %>
+    42:     <%= skills_form.field :years %>
+    43:   </div>
+    44: 
+    45:   <% end %>
+  
+app/views/profiles/_form.html.erb:42:in `block (2 levels) in _app_views_profiles__form_html_erb__2040049511458019642_70324445277940'
+app/views/profiles/_form.html.erb:34:in `block in _app_views_profiles__form_html_erb__2040049511458019642_70324445277940'
+app/views/profiles/_form.html.erb:1:in `_app_views_profiles__form_html_erb__2040049511458019642_70324445277940'
+app/views/profiles/edit.html.erb:3:in `_app_views_profiles_edit_html_erb__4343516803009829793_70324446008740'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.9ms)
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:46:44 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles/1/edit" for 127.0.0.1 at 2016-09-15 14:46:45 -0300
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (93.6ms)
+  Rendered profiles/edit.html.erb within layouts/application (94.7ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `field' for #<ActionView::Helpers::FormBuilder:0x007feb5dfa1630>):
+    39: 
+    40:   <div class="field">
+    41:     <%= skills_form.label :years %>
+    42:     <%= skills_form.field :years %>
+    43:   </div>
+    44: 
+    45:   <% end %>
+  
+app/views/profiles/_form.html.erb:42:in `block (2 levels) in _app_views_profiles__form_html_erb__2040049511458019642_70324435438680'
+app/views/profiles/_form.html.erb:34:in `block in _app_views_profiles__form_html_erb__2040049511458019642_70324435438680'
+app/views/profiles/_form.html.erb:1:in `_app_views_profiles__form_html_erb__2040049511458019642_70324435438680'
+app/views/profiles/edit.html.erb:3:in `_app_views_profiles_edit_html_erb__4343516803009829793_70324385289020'
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/aluno3/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.7ms)
+Started GET "/profiles/1/edit" for 127.0.0.1 at 2016-09-15 14:46:57 -0300
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (5.3ms)
+  Rendered profiles/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles/1/edit" for 127.0.0.1 at 2016-09-15 14:47:18 -0300
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (5.1ms)
+  Rendered profiles/edit.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:48:09 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2016-09-15 14:48:11 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2016-09-15 14:48:14 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:49:01 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:49:39 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:52:04 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 47ms (Views: 32.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:52:05 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (5.3ms)
+  Rendered profiles/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profiles" for 127.0.0.1 at 2016-09-15 14:52:17 -0300
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8T+rt4ODLIZkKFdeP6W/JROIdPQSRucZpOar9lZ71rK6b8RkMAFWT4FpNuJRuA5sbe0MLz/0lclKc2GMta7G4A==", "profile"=>{"name"=>"Fellipe32", "email"=>"Callegas.f@gmail.com", "github"=>"", "bio"=>"", "skills"=>{"name"=>"aaaa", "years"=>"123"}}, "commit"=>"Create Profile"}
+Unpermitted parameter: skills
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "email", "github", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fellipe32"], ["email", "Callegas.f@gmail.com"], ["github", ""], ["bio", ""], ["created_at", 2016-09-15 17:52:17 UTC], ["updated_at", 2016-09-15 17:52:17 UTC]]
+  [1m[35m (316.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/profiles/15
+Completed 302 Found in 323ms (ActiveRecord: 317.4ms)
+
+
+Started GET "/profiles/15" for 127.0.0.1 at 2016-09-15 14:52:17 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:52:27 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2016-09-15 14:55:53 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 1]]
+  Rendered profiles/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 51ms (Views: 29.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2016-09-15 14:55:55 -0300
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (4.3ms)
+  Rendered profiles/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 51ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profiles" for 127.0.0.1 at 2016-09-15 14:56:19 -0300
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ZdX056DiOQU006SuEa6fUeuWdFy0ktVo4SbIQMkBDiWxzgALQHyLfGSLy7WWws0OcshCl9gOYVNEVFb4PEUag==", "profile"=>{"name"=>"Lucimar123", "email"=>"Callegas.f@gmail.com", "github"=>"Callegas", "bio"=>"teste", "skills_attributes"=>{"0"=>{"name"=>"NodeJS", "years"=>"12"}}}, "commit"=>"Create Profile"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "email", "github", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lucimar123"], ["email", "Callegas.f@gmail.com"], ["github", "Callegas"], ["bio", "teste"], ["created_at", 2016-09-15 17:56:19 UTC], ["updated_at", 2016-09-15 17:56:19 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "skills" ("name", "years", "created_at", "updated_at", "profile_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "NodeJS"], ["years", 12], ["created_at", 2016-09-15 17:56:19 UTC], ["updated_at", 2016-09-15 17:56:19 UTC], ["profile_id", 16]]
+  [1m[35m (257.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/profiles/16
+Completed 302 Found in 266ms (ActiveRecord: 257.9ms)
+
+
+Started GET "/profiles/16" for 127.0.0.1 at 2016-09-15 14:56:19 -0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSkill Load (0.5ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" ORDER BY "skills"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:59:10 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 232ms (Views: 212.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 14:59:37 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 56ms (Views: 53.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 15:01:09 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 15:01:47 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 51ms (Views: 47.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 15:02:11 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 43ms (Views: 40.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 15:02:40 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 40ms (Views: 35.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 15:03:11 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 15:04:09 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 15:05:18 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 15:05:46 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-15 15:06:00 -0300
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT "skills".* FROM "skills" WHERE "skills"."profile_id" = ?[0m  [["profile_id", 16]]
+  Rendered profiles/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateJobs (20160915181910)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160915181910"]]
+  [1m[35m (141.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
